@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://assets/texture/files/png/map/map.png" type="Texture" id=1]
+[ext_resource path="res://scenes/level_chouse.tscn" type="PackedScene" id=2]
+
+[node name="main_screen" type="Node"]
+
+[node name="bg_main" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="levels" type="Node" parent="."]
+
+[node name="level_1" parent="levels" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 164.754, 1085.06 )
+level = 1
+
+[node name="level_2" parent="levels" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 363.639, 1037.22 )
+level = 2
+
+[node name="level_3" parent="levels" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 552.454, 964.215 )
+level = 3
+
+
