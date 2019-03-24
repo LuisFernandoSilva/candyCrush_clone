@@ -56,6 +56,15 @@ wait_time = 0.5
 one_shot = true
 autostart = false
 
+[node name="interval" type="Timer" parent="candies"]
+
+process_mode = 1
+wait_time = 0.8
+one_shot = false
+autostart = false
+
 [connection signal="timeout" from="candies/delay" to="candies" method="_on_delay_timeout"]
+
+[connection signal="timeout" from="candies/interval" to="candies" method="_on_interval_timeout"]
 
 
