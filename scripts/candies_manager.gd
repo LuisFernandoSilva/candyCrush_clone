@@ -107,7 +107,42 @@ func find_pattern():
 		remove_child(i)
 		matrix[i.x][i.y] = null
 	
+	move_down()
+	
 	return valid
+	pass
+	
+func move_down():
+	#para cada linha percorre uma a uma decrementando em um, nas colunas 
+	for y in range(11, -1, -1):
+		var x  = 0
+		#enquanto x for menor que 8
+		while(x <=8):
+			if y == 0:
+				if matrix[x][y] == null:
+					matrix[x][y] = generate_candies(x,y)
+			#se a matrix nao estiver nula
+			if matrix[x][y] != null:
+				var moved = false
+				var toY
+			#olha para baixo pra verificar se esta vazia, para o doce poder descer
+				for i in range( y + 1,12):
+					if matrix[x][i] == null:
+						toY = i
+						moved = true
+					else:
+						break
+			
+				if moved:
+					matrix[x][y].move_to(x,toY)
+					matrix[x][toY] = matrix[x][y]
+					matrix[x][y] = null
+			#caso ainda tenha espaço em banco nao incrementamos o x 
+			if y == 0 and matrix[x][y] == null:
+				pass
+			else:
+				x +=1
+		
 	pass
 func add_to_remove(list,obj):
 	if not list.has(obj):
