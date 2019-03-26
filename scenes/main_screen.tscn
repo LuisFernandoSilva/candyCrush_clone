@@ -20,12 +20,27 @@ level = 1
 
 [node name="level_2" parent="levels" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 363.639, 1037.22 )
+transform/pos = Vector2( 343.151, 1042 )
 level = 2
 
 [node name="level_3" parent="levels" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 552.454, 964.215 )
+transform/pos = Vector2( 519.498, 980.482 )
 level = 3
+
+[node name="level_4" parent="levels" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 648.682, 857.45 )
+level = 4
+
+[node name="level_5" parent="levels" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 615.874, 691.356 )
+level = 5
+
+[node name="level_6" parent="levels" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 464.134, 629.839 )
+level = 6
 
 

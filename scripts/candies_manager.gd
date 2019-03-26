@@ -1,13 +1,21 @@
 extends Node
+
+onready var moves_board = get_parent().get_node("moves_board")
+onready var bar = get_parent().get_node("bar")
 #nessa versao da godot nao existe matrix fazer a manual
 var matrix = []
 var candies_pre = preload("res://scenes/candy.tscn")
 var box_pre = preload("res://scenes/box.tscn")
 var level = 1
+var can_play = false
+signal played
+signal add_points
+
 #objetos para a troca conforme a identificaçao dos sinais
 var obj1
 var obj2
 func _ready():
+	level = data.current_level
 	clear_matrix()
 	read_level()
 	rand_matrix()
@@ -27,6 +35,8 @@ func read_level():
 		for y in range(12):
 			if lines[y][x] == "1":
 				matrix[x][y] = create_box(x,y)
+	moves_board.set_moves(int(lines[12]))
+	bar.set_max(int(lines[13]))
 	pass
 func clear_matrix():
 	#para cada uma das colunas ,adiciona uma array vazia, e pega a coluna x e inicializa vazia 
@@ -73,12 +83,17 @@ func is_candy(obj):
 	pass
 
 func obj_selected(obj,option):
+	if not can_play:
+		obj.deselect()
+		return
 	if option:
 		if obj1 == null:
 			obj1 = obj
 		else:
 			obj2 = obj
 			if test_close():
+				can_play = false
+				emit_signal("played")
 				obj1.move_to(obj2.x,obj2.y)
 				obj2.move_to(obj1.x, obj1.y)
 				#troca na matrix
@@ -138,6 +153,10 @@ func find_pattern():
 				valid = true
 	#para cada item na lista vamos remove lo ao final
 	for i in to_remove:
+		if i.special:
+			emit_signal("add_points", 5)
+		else:
+			emit_signal("add_points", 1)
 		remove_child(i)
 		matrix[i.x][i.y] = null
 	
@@ -194,7 +213,7 @@ func _on_delay_timeout():
 		obj2.move_to(obj1.x, obj1.y)
 		matrix[obj1.x][obj1.y] = obj2
 		matrix[obj2.x][obj2.y] = obj1
-		
+		can_play = true
 	obj1.deselect()
 	obj2.deselect()
 	obj1 = null
@@ -205,4 +224,8 @@ func _on_delay_timeout():
 func _on_interval_timeout():
 	if not find_pattern():
 		get_node("interval").stop()
+	can_play = true
+	if moves_board.moves == 0:
+		print("acabou")
+	
 	pass 

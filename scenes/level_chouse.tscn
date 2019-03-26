@@ -22,6 +22,10 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
 level = 0
+marker_onlock = "res://assets/texture/files/png/map/marker_active.png"
+star_1 = "res://assets/texture/files/png/map/1_star.png"
+star_2 = "res://assets/texture/files/png/map/2_stars.png"
+star_3 = "res://assets/texture/files/png/map/3_stars.png"
 
 [node name="lock" type="Sprite" parent="."]
 

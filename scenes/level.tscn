@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://assets/texture/files/png/main_game/Layer_2_Copy.png" type="Texture" id=1]
 [ext_resource path="res://assets/texture/files/png/main_game/border.png" type="Texture" id=2]
-[ext_resource path="res://scripts/candies_manager.gd" type="Script" id=3]
+[ext_resource path="res://assets/texture/files/png/main_game/Group__Copy_97.png" type="Texture" id=3]
+[ext_resource path="res://scripts/bar.gd" type="Script" id=4]
+[ext_resource path="res://assets/texture/files/png/main_game/Group__Copy_96.png" type="Texture" id=5]
+[ext_resource path="res://assets/texture/files/png/main_game/Group__Copy_95.png" type="Texture" id=6]
+[ext_resource path="res://assets/texture/files/png/main_game/Group__Copy_99.png" type="Texture" id=7]
+[ext_resource path="res://assets/texture/files/png/main_game/board.png" type="Texture" id=8]
+[ext_resource path="res://scripts/moves_board.gd" type="Script" id=9]
+[ext_resource path="res://assets/texture/files/png/main_game/moves.png" type="Texture" id=10]
+[ext_resource path="res://assets/texture/files/png/gui/$.png" type="Texture" id=11]
+[ext_resource path="res://scripts/candies_manager.gd" type="Script" id=12]
 
 [node name="level" type="Node"]
 
@@ -33,6 +42,67 @@ transform/scale = Vector2( 0.5, 0.493125 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="bar" type="Sprite" parent="."]
+
+transform/pos = Vector2( 145.709, 67.8486 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+script/script = ExtResource( 4 )
+star_on = "res://assets/texture/files/png/main_game/Group__Copy_100.png"
+
+[node name="back" type="Sprite" parent="bar"]
+
+texture = ExtResource( 5 )
+
+[node name="green" type="Sprite" parent="bar"]
+
+transform/pos = Vector2( -240, -22 )
+transform/scale = Vector2( 1.17623, 1 )
+texture = ExtResource( 6 )
+centered = false
+region = true
+
+[node name="star_1" type="Sprite" parent="bar"]
+
+editor/display_folded = true
+transform/pos = Vector2( -60, 77 )
+texture = ExtResource( 7 )
+
+[node name="ColorFrame" type="ColorFrame" parent="bar/star_1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -4.0
+margin/top = -100.0
+margin/right = 3.0
+margin/bottom = -58.0
+color = Color( 1, 1, 1, 1 )
+
+[node name="star_2" type="Sprite" parent="bar"]
+
+editor/display_folded = true
+transform/pos = Vector2( 90, 77 )
+texture = ExtResource( 7 )
+
+[node name="ColorFrame1" type="ColorFrame" parent="bar/star_2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -4.0
+margin/top = -99.0
+margin/right = 3.0
+margin/bottom = -57.0
+color = Color( 1, 1, 1, 1 )
+
+[node name="star_3" type="Sprite" parent="bar"]
+
+transform/pos = Vector2( 240, 77 )
+texture = ExtResource( 7 )
+
 [node name="board" type="ColorFrame" parent="."]
 
 focus/ignore_mouse = false
@@ -45,9 +115,34 @@ margin/right = 737.0
 margin/bottom = 1190.0
 color = Color( 0.984314, 0.792157, 0.701961, 1 )
 
+[node name="moves_board" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 383.077, 86.9789 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+script/script = ExtResource( 9 )
+
+[node name="label" type="Sprite" parent="moves_board"]
+
+transform/pos = Vector2( -3.70129, -92.5308 )
+transform/rot = -2.43926
+texture = ExtResource( 10 )
+
+[node name="number_1" type="Sprite" parent="moves_board"]
+
+transform/pos = Vector2( -65.9999, 26 )
+texture = ExtResource( 11 )
+
+[node name="number_2" type="Sprite" parent="moves_board"]
+
+transform/pos = Vector2( 37.9999, 28 )
+texture = ExtResource( 11 )
+
 [node name="candies" type="Node" parent="."]
 
-script/script = ExtResource( 3 )
+editor/display_folded = true
+script/script = ExtResource( 12 )
 
 [node name="delay" type="Timer" parent="candies"]
 
@@ -62,6 +157,10 @@ process_mode = 1
 wait_time = 0.8
 one_shot = false
 autostart = false
+
+[connection signal="add_points" from="candies" to="bar" method="_on_candies_add_points"]
+
+[connection signal="played" from="candies" to="moves_board" method="_on_candies_played"]
 
 [connection signal="timeout" from="candies/delay" to="candies" method="_on_delay_timeout"]
 
