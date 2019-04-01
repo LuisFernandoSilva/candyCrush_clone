@@ -38,7 +38,7 @@ func _on_candies_add_points(value):
 	pass
 
 func win():
-	return  point >= p1
+	return  points >= p1
 	pass
 func win_max():
 	return  points >= p3

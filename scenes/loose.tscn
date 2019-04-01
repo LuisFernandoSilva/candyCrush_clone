@@ -1,0 +1,304 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://scripts/loose.gd" type="Script" id=1]
+[ext_resource path="res://assets/texture/files/png/gui/plashka.png" type="Texture" id=2]
+[ext_resource path="res://assets/texture/files/png/gui/circle_green.png" type="Texture" id=3]
+[ext_resource path="res://assets/texture/files/png/gui/Group_12.png" type="Texture" id=4]
+[ext_resource path="res://assets/texture/files/png/gui/r1.png" type="Texture" id=5]
+[ext_resource path="res://assets/texture/files/png/gui/replay.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "hide"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 76.2369, 419.898 ), Vector2( 76.2369, 1398.29 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("replay_button:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 315.341, 664.996 ), Vector2( 315.341, 1643.39 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("replay_button:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("home_button:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 45.3411, 384.996 ), Vector2( 45.3411, 1363.39 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("home_button:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite1:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 229.838, 499.475 ), Vector2( 229.838, 1477.86 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite1:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite1:rect/pos")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 298, 536 ), Vector2( 267, 1495 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "show"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80.8959, -358.154 ), Vector2( 76.2369, 419.898 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("replay_button:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, -113.056 ), Vector2( 315.341, 664.996 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("replay_button:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("home_button:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, -393.056 ), Vector2( 45.3411, 384.996 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("home_button:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite1:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 234.497, -278.578 ), Vector2( 229.838, 499.475 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite1:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite1:rect/pos")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 288, -255 ), Vector2( 275, 513 ) ]
+}
+
+[node name="loose" type="Node2D"]
+
+process/pause_mode = 2
+script/script = ExtResource( 1 )
+
+[node name="ColorFrame" type="ColorFrame" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 800.0
+margin/bottom = 1280.0
+color = Color( 1, 1, 1, 0.469961 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 80.8959, -358.154 )
+transform/scale = Vector2( 0.5, 0.155134 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="home_button" type="TouchScreenButton" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 50, -393.056 )
+transform/scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Sprite" type="Sprite" parent="home_button"]
+
+transform/pos = Vector2( 112.319, 106.162 )
+texture = ExtResource( 4 )
+
+[node name="replay_button" type="TouchScreenButton" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 320, -113.056 )
+transform/scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Sprite" type="Sprite" parent="replay_button"]
+
+transform/pos = Vector2( 193.746, 98.7593 )
+texture = ExtResource( 6 )
+
+[node name="Sprite1" type="Label" parent="."]
+
+rect/scale = Vector2( 5, 5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 288.0
+margin/top = -255.0
+margin/right = 336.0
+margin/bottom = -234.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Loose
+"
+autowrap = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/hide = SubResource( 1 )
+anims/show = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "show"
+
+[connection signal="pressed" from="home_button" to="." method="_on_home_button_pressed"]
+
+[connection signal="pressed" from="replay_button" to="." method="_on_replay_button_pressed"]
+
+

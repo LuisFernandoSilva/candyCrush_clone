@@ -226,6 +226,11 @@ func _on_interval_timeout():
 		get_node("interval").stop()
 	can_play = true
 	if moves_board.moves == 0:
-		print("acabou")
+		if bar.win():
+			transition.put_above("res://scenes/win.tscn")
+		else:
+			transition.put_above("res://scenes/loose.tscn ")
+		if bar.win_max():
+			transition.put_above("res://scenes/win.tscn")
 	
 	pass 
